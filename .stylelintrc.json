@@ -1,0 +1,43 @@
+{
+    "plugins": [
+      "stylelint-order"
+    ],
+    "rules": {
+      "order/properties-order": [
+        [
+          {
+            "groupName": "Positioning",
+            "properties": [
+              "position", "z-index", "top", "right", "bottom", "left"
+            ]
+          },
+          {
+            "groupName": "Display & Box Model",
+            "properties": [
+              "display", "flex", "grid", "align-items", "justify-content", "width", "height", "margin", "padding", "border"
+            ]
+          },
+          {
+            "groupName": "Colors & Aesthetic",
+            "properties": [
+              "color", "background", "box-shadow", "border-radius", "opacity"
+            ]
+          },
+          {
+            "groupName": "Typography",
+            "properties": [
+              "font-size", "line-height", "text-align", "font-weight", "font-family"
+            ]
+          },
+          {
+            "groupName": "Other",
+            "properties": [
+              "transition", "animation", "cursor", "pointer-events"
+            ]
+          }
+        ],
+        { "unspecified": "bottom" }
+      ]
+    }
+  }
+  

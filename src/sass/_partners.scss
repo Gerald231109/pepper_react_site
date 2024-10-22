@@ -1,0 +1,80 @@
+.partners {
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  row-gap: 3rem;
+  margin-top: 6.5rem;
+}
+
+.partner__title {
+  color: #eb645a;
+  font-size: 3.2rem;
+  font-family: "Montserrat";
+  text-transform: uppercase;
+  justify-self: center;
+}
+
+.partner__wrapper {
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background-color: #eb645a;
+  justify-items: center;
+  overflow-x: hidden;
+}
+
+.partner__logos {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: max(120rem, 100%);
+  padding: 4.8rem 0;
+  grid-template-columns: repeat(7, min-content);
+  grid-auto-flow: column;
+  column-gap: 4.4rem;
+}
+
+.partner__logo {
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    opacity: 1;
+    transition: opacity 0.6s, filter 0.6s;
+    filter: brightness(3);
+  }
+}
+
+.partner__adidas {
+  opacity: 0.35;
+}
+
+.partner__invite {
+  display: grid;
+  text-align: center;
+  grid-auto-flow: row;
+  justify-items: center;
+  margin-top: 3rem;
+  @include respond(medium) {
+    row-gap: 1rem;
+  }
+}
+
+.invite__text {
+  padding: 0 4rem;
+  font-size: 2.4rem;
+  font-family: "FuturaBook";
+}
+
+.invite__link {
+  padding: 2rem clamp(5rem, 23vw, 9rem);
+  color: #fff;
+  border-radius: 1rem;
+  font-size: 1.8rem;
+  font-family: "FuturaDemic";
+  margin-top: 3rem;
+  background-color: #29d3d1;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-bottom: 6rem;
+}

@@ -1,0 +1,87 @@
+.func {
+  position: relative;
+  display: grid;
+  padding: 6rem 1rem;
+  color: #fff;
+  background-color: #29d3d1;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 21rem;
+  row-gap: 4.5rem;
+  overflow-x: clip;
+  margin-bottom: 31.5rem;
+}
+
+.func__titles {
+  display: grid;
+  font-size: 3.2rem;
+  font-weight: 600;
+  font-family: "Montserrat";
+  grid-template-columns: 53.5rem repeat(4, max-content);
+  column-gap: 5rem;
+  text-transform: uppercase;
+
+  @include respond(big) {
+    grid-template-columns: 34rem repeat(4, max-content);
+  }
+}
+
+.func__title {
+  opacity: 0.35;
+  cursor: pointer;
+  user-select: none;
+
+  @include respond(big) {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &:not(.title__active):hover {
+    opacity: 0.5;
+    transition: opacity 0.4s;
+  }
+}
+
+.title__active {
+  opacity: 1;
+  border-bottom: 4px solid #fff;
+  padding-bottom: 1.5rem;
+}
+
+.func__text {
+  width: 48vw;
+  font-size: 2.4rem;
+  font-family: "FuturaBook";
+  margin-left: 58.5rem;
+  max-width: 70rem;
+
+  @include respond(big) {
+    margin-left: 39rem;
+  }
+}
+
+.func__text:first-child {
+  margin-bottom: 2.5rem;
+}
+
+.func__phone {
+  position: absolute;
+  top: -7.6rem;
+  left: 27rem;
+  user-select: none;
+
+  @include respond(big) {
+    left: 5rem;
+  }
+}
+
+.phone__display {
+  position: absolute;
+  top: 5.5rem;
+  left: 4.2rem;
+  width: 24.3rem;
+  height: 43.1rem;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
