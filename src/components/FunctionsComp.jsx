@@ -63,20 +63,20 @@ export default function Functions() {
 
   return (
     <>
-      {isVisible && (
+      {isVisible ? (
         <section className="func">
           <div className="func__titles">
             {titles.map((item, index) => (
               <motion.div
+                key={item.id}
+                className={
+                  index === 1 ? 'func__title title__active' : 'func__title'
+                }
                 layout="position"
                 transition={{
                   ease: 'easeInOut',
                 }}
-                key={item.id}
                 onClick={() => swapItems(index)}
-                className={
-                  index === 1 ? 'func__title title__active' : 'func__title'
-                }
               >
                 {item.title}
               </motion.div>
@@ -84,34 +84,34 @@ export default function Functions() {
           </div>
 
           <motion.div
-            variants={textAppear}
-            initial="hidden"
-            animate="visible"
             key={active.title}
+            animate="visible"
+            initial="hidden"
+            variants={textAppear}
           >
             <p className="func__text text__top">{active.text[0]}</p>
             <p className="func__text">{active.text[1]}</p>
           </motion.div>
 
           <div className="func__phone">
-            <img src={phone} alt="" className="phone__case" />
+            <img alt="" className="phone__case" src={phone} />
             <motion.div
-              variants={textAppear}
-              onMouseDown={handleSwipeStart}
-              onMouseUp={handleSwipeEnd}
-              initial="hidden"
+              key={active.title}
+              alt=""
               animate="visible"
+              className="phone__display"
+              initial="hidden"
+              src={active.display}
               style={{
                 backgroundImage: `url(${active.display})`,
               }}
-              key={active.title}
-              src={active.display}
-              alt=""
-              className="phone__display"
-            ></motion.div>
+              variants={textAppear}
+              onMouseDown={handleSwipeStart}
+              onMouseUp={handleSwipeEnd}
+            />
           </div>
         </section>
-      )}
+      ) : null}
     </>
   );
 }

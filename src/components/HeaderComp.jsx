@@ -106,38 +106,38 @@ export default function Header() {
         <div className="header__links">
           {social.map((item) => (
             <motion.a
-              whileHover={{ scale: 1.2 }}
-              className="header__link"
               key={item.title}
+              className="header__link"
+              whileHover={{ scale: 1.2 }}
             >
               {item.icon}
             </motion.a>
           ))}
         </div>
         <motion.a
-          whileHover={{ color: '#000', backgroundColor: '#fff' }}
-          href="#"
           className="header__join"
+          href="#"
+          whileHover={{ color: '#000', backgroundColor: '#fff' }}
         >
           {header.partnerText}
         </motion.a>
       </div>
       <div className="header__bot">
         <motion.div
-          variants={(download || mediumScreen) && downloadAppear}
-          initial="hidden"
           animate="visible"
-          onAnimationComplete={() => setFlag(true)}
           className="header__download"
+          initial="hidden"
+          variants={download || mediumScreen ? downloadAppear : null}
+          onAnimationComplete={() => setFlag(true)}
         >
           <div className="download__title">
             <motion.img
-              initial="hidden"
-              animate="visible"
-              variants={flagAppear}
-              src={header.flag}
               alt=""
+              animate="visible"
               className="title__flag"
+              initial="hidden"
+              src={header.flag}
+              variants={flagAppear}
             />
             <h1 className="title__text">
               {header.shopGuide[0]}
@@ -145,44 +145,44 @@ export default function Header() {
             </h1>
           </div>
           <div className="download__divider">
-            <div className="divider__line"></div>
+            <div className="divider__line" />
             <p className="divider__text">{header.dividerText}</p>
-            <div className="divider__line"></div>
+            <div className="divider__line" />
           </div>
           <div className="download__links">
             <motion.img
-              whileHover={{ ...linkHover }}
-              src={header.appleStore}
               alt=""
               className="download__link"
+              src={header.appleStore}
+              whileHover={{ ...linkHover }}
             />
             <motion.img
-              whileHover={{ ...linkHover }}
-              src={header.googlePlay}
               alt=""
               className="download__link"
+              src={header.googlePlay}
+              whileHover={{ ...linkHover }}
             />
           </div>
         </motion.div>
         <motion.img
           {...phoneAppear}
-          onAnimationComplete={() => setDownload(true)}
-          src={header.headerPhone}
           alt=""
           className="header__phone"
+          src={header.headerPhone}
+          onAnimationComplete={() => setDownload(true)}
         />
       </div>
       <motion.a
         {...downAppear}
-        href="#dignities-section"
         className="header__down"
+        href="#dignities-section"
       >
         {header.downBtnText}
         <motion.img
-          animate={{ ...arrowMove }}
-          src={header.down}
           alt=""
+          animate={{ ...arrowMove }}
           className="down__arrow"
+          src={header.down}
         />
         {header.downBtnText}
       </motion.a>

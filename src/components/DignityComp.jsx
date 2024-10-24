@@ -1,5 +1,6 @@
 import { dignities } from '../constants/copyright';
 import { motion } from 'framer-motion';
+
 export default function Dignity() {
   const firstRow = dignities.slice(0, 2);
   const secondRow = dignities.slice(2, 4);
@@ -22,15 +23,15 @@ export default function Dignity() {
     <section className="dignities" id="dignities-section">
       <div className="dignities__row">
         {firstRow.map((item, index) => (
-          <div className="dignity" key={item.title}>
+          <div key={item.title} className="dignity">
             <motion.img
-              initial="initial"
-              animate="animate"
-              custom={index}
-              variants={iconJump}
-              src={item.icon}
               alt=""
+              animate="animate"
               className="dignity__icon"
+              custom={index}
+              initial="initial"
+              src={item.icon}
+              variants={iconJump}
             />
             <h1 className="dignity__title">{item.title}</h1>
             <p className="dignity__desc">{item.text}</p>
@@ -39,15 +40,15 @@ export default function Dignity() {
       </div>
       <div className="dignities__row">
         {secondRow.map((item, index) => (
-          <div className="dignity" key={item.title}>
+          <div key={item.title} className="dignity">
             <motion.img
-              initial="initial"
-              animate="animate"
-              custom={index}
-              variants={iconJump}
-              src={item.icon}
               alt=""
+              animate="animate"
               className="dignity__icon"
+              custom={index}
+              initial="initial"
+              src={item.icon}
+              variants={iconJump}
             />
             <h1 className="dignity__title">{item.title}</h1>
             <p className="dignity__desc">{item.text}</p>

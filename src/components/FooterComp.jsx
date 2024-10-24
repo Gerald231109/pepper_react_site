@@ -10,25 +10,25 @@ export default function Footer() {
       <div className="footer__copyright">
         <p className="copyright__top">{footer.copyright}</p>
         <div className="copyright__bot">
-          <a href="#" className="copyright__link">
+          <a className="copyright__link" href="#">
             {footer.privacy}
           </a>
-          <a href="#" className="copyright__link">
+          <a className="copyright__link" href="#">
             {footer.terms}
           </a>
         </div>
       </div>
       <a
-        href="#"
         className="footer__contact"
+        href="#"
         onMouseEnter={() => setHoverLink(true)}
         onMouseLeave={() => setHoverLink(false)}
       >
         <motion.img
-          src={footer.contactIcon}
           alt=""
-          className="contact__icon"
           animate={hoverLink ? { y: -5 } : { y: 0 }}
+          className="contact__icon"
+          src={footer.contactIcon}
           transition={{ type: 'spring', stiffness: 700 }}
         />
         {footer.contact}

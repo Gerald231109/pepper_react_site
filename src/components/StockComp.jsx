@@ -7,7 +7,7 @@ export default function Stock() {
         <h1 className="stock__title">{stock.title}</h1>
         <p className="stock__desc">{stock.text}</p>
       </div>
-      <img src={stock.img} alt="" className="stock__phone" />
+      <img alt="" className="stock__phone" src={stock.img} />
     </section>
   );
 }

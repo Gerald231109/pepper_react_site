@@ -6,7 +6,7 @@ import Partner from './components/PartnersComp';
 import Footer from './components/FooterComp';
 import './sass/index.scss';
 
-function App() {
+const App = () => {
   return (
     <>
       <Header />
@@ -17,6 +17,6 @@ function App() {
       <Footer />
     </>
   );
-}
+};
 
 export default App;

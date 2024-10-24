@@ -27,19 +27,19 @@ export default function Partners() {
   return (
     <section className="partners">
       <h1 className="partner__title">{partners.title}</h1>
-      <div className="partner__wrapper" ref={container}>
+      <div ref={container} className="partner__wrapper">
         <motion.div
-          drag={dragFlag && 'x'}
+          className="partner__logos"
+          drag={dragFlag ? 'x' : null}
           dragConstraints={container}
           whileTap={{ cursor: 'grabbing' }}
-          className="partner__logos"
         >
           {logoList.map((item, index) => (
             <img
-              src={item}
               key={index}
               alt=""
               className={`partner__logo ${index === 3 && 'partner__adidas'}`}
+              src={item}
             />
           ))}
         </motion.div>
@@ -51,16 +51,16 @@ export default function Partners() {
           </p>
         ))}
         <motion.a
-          href="#"
           className="invite__link"
-          whileHover={{
-            scale: 1.05,
-            boxShadow: '0px 2px 15px rgba(0, 0, 0, 0.3)',
-          }}
+          href="#"
           transition={{
             type: 'spring',
             stiffness: 700,
             damping: 20,
+          }}
+          whileHover={{
+            scale: 1.05,
+            boxShadow: '0px 2px 15px rgba(0, 0, 0, 0.3)',
           }}
         >
           {partners.btnText}
